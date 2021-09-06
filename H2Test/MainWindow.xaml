@@ -1,0 +1,49 @@
+﻿<Window x:Class="H2Test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:H2Test" xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+        mc:Ignorable="d"
+        Title="Names" Height="325" Width="300" WindowState="Normal" ResizeMode="NoResize">
+
+
+    <Window.Resources>
+        <Style x:Key="Label" TargetType="Label">
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="FontFamily" Value="Arial"></Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <ListBox MouseLeftButtonDown="lstNames_MouseLeftButtonDown" KeyDown="lstNames_KeyDown" Grid.Row="1" x:Name="lstNames" Margin="10,10,10,-242"  RenderTransformOrigin="0.484,0.714" FontSize="13" />
+
+        <Border BorderBrush="Black" BorderThickness="0 0 1 0" Margin="0,0,0,-275" Grid.Row="1"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="0,0,0,-275">
+            <TextBox x:Name="txtName" Width="110" Margin="0,10,0,0" KeyDown="txtName_KeyDown" TextChanged="txtName_TextChanged"/>
+            <Button x:Name="btnAdd" Click="Name_Click" Margin="0,10,0,0" Width="110" Content="Add Name" RenderTransformOrigin="0.452,4.313"/>
+            <Button x:Name="btnDelete" Click="btnDelete_Click" Margin="0,10,0,0" Width="110" Content="Delete Name" RenderTransformOrigin="0.452,4.313" />
+            <Button x:Name="btnDeleteAll" Click="btnDeleteAll_Click" Margin="0,10,0,0" Width="110" Content="Delete All" RenderTransformOrigin="0.452,4.313" />
+            <Button x:Name="btnOption" Click="btnOption_Click" Margin="0,10,0,0" Width="110" Content="Option" RenderTransformOrigin="0.452,4.313"></Button>
+            <Button x:Name="btnSaveList" Click="btnSaveList_Click" Margin="0,10,0,0" Width="110" Content="Save List" RenderTransformOrigin="0.452,4.313"></Button>
+            <Button x:Name="btnLoadList" Click="btnLoadList_Click" Margin="0,10,0,0" Width="110" Content="Load List" RenderTransformOrigin="0.452,4.313"></Button>
+            <TextBox x:Name="txtTopic" Width="110" Margin="0,10,0,0"  TextChanged="txtTopic_TextChanged" Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        </StackPanel>
+        
+        <Border Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0 0 0 1">
+            <Label Style="{StaticResource Label}" x:Name="txtTitle" Content="{Binding ElementName=txtTopic, Path=Text}"/>
+        </Border>
+    </Grid>
+</Window>
