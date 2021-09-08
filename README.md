@@ -6,7 +6,7 @@ This is a project with a list of names...
 	- [Version 0.3.0](#Version-0.3.0)
 	- [Version 0.2.0](#Version-0.2.0)
 	- [Version 0.1.0](#Version-0.1.0)
-* Infomation
+* **Infomation**
 	* [Key Commands](#Key-Commands)
 	* [Method Used](#Methods-Used)
 		* [Main Window](#Main-Window)
